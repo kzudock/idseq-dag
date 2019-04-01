@@ -1,0 +1,52 @@
+{
+  "output_dir_s3": "s3://idseq-samples-development/markazhang/samples_16169/generate_coverage_viz_test",
+  "targets": {
+    "refined_gsnap_out": [
+      "gsnap.blast.m8",
+      "gsnap.reassigned.m8",
+      "gsnap.hitsummary2.tab",
+      "refined_gsnap_counts.json",
+      "gsnap_contig_summary.json",
+      "gsnap.blast.top.m8"
+    ],
+    "accession_summary": ["accession_summary.tab"],
+    "coverage_out": [
+      "contig_coverage.json"
+    ],
+    "assembly_out": [
+      "contig_stats.json"
+    ],
+    "gsnap_out": [
+      "gsnap.deduped.m8"
+    ],
+    "coverage_viz_out": ["coverage_viz_summary.json"]
+  },
+  "steps": [
+    {
+      "in": ["refined_gsnap_out", "accession_summary", "coverage_out", "assembly_out", "gsnap_out"],
+      "out": "coverage_viz_out",
+      "class": "PipelineStepGenerateCoverageViz",
+      "module": "idseq_dag.steps.generate_coverage_viz",
+      "additional_files": {},
+      "additional_attributes": {}
+    }
+  ],
+  "given_targets": {
+    "refined_gsnap_out": {
+      "s3_dir": "s3://idseq-samples-prod/samples/314/16169/postprocess/3.5/assembly"
+    },
+    "accession_summary": {
+      "s3_dir": "s3://idseq-samples-development/markazhang/samples_16169/download_accessions_test/3.5"
+    },
+    "coverage_out": {
+      "s3_dir": "s3://idseq-samples-prod/samples/314/16169/postprocess/3.5/assembly"
+    },
+    "assembly_out": {
+      "s3_dir": "s3://idseq-samples-prod/samples/314/16169/postprocess/3.5/assembly"
+    },
+    "gsnap_out": {
+      "s3_dir": "s3://idseq-samples-prod/samples/314/16169/results/3.5"
+    }
+  }
+}
+

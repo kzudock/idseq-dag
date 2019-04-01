@@ -28,13 +28,15 @@
     "rapsearch2_accessions_out": ["nr.refseq.fasta"],
     "refined_gsnap_out": [
       "gsnap.blast.m8",
+      "gsnap.blast.top.m8",
       "gsnap.reassigned.m8",
       "gsnap.hitsummary2.tab",
-      "refined_gsnap_counts.json", 
+      "refined_gsnap_counts.json",
       "gsnap_contig_summary.json"
     ],
     "refined_rapsearch2_out": [
       "rapsearch2.blast.m8",
+      "rapsearch2.blast.top.m8",
       "rapsearch2.reassigned.m8",
       "rapsearch2.hitsummary2.tab",
       "refined_rapsearch2_counts.json",
@@ -125,7 +127,7 @@
   ],
   "given_targets": {
     "host_filter_out": {
-      "s3_dir":  "s3://idseq-samples-prod/samples/27/1793/results/3.0", "count_reads": 0  
+      "s3_dir":  "s3://idseq-samples-prod/samples/27/1793/results/3.0", "count_reads": 0
     },
     "gsnap_out": {
       "s3_dir": "s3://idseq-samples-prod/samples/27/1793/results/3.0"
